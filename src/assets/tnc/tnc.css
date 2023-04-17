@@ -1,0 +1,116 @@
+.container {
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.maintnc{
+    text-align: center;
+    background-color: #d1e7ff;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+  }
+ 
+  .money-falling-container {
+    height: 15vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    background-color: #440099;
+  }
+  
+  .note {
+    position: absolute;
+    top: -30px;
+    width: 30px;
+    height: 30px;
+    background-image: url("rupee.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: fall 10s infinite;
+  }
+  
+  @keyframes fall {
+    from {
+      transform: translateY(-20px);
+    }
+    to {
+      transform: translateY(200vh);
+    }
+  }
+  
+  .note:nth-child(1) {
+    animation-delay: 0.5s;
+  }
+  
+  .note:nth-child(2) {
+    animation-delay: 1.5s;
+  }
+  
+  .note:nth-child(3) {
+    animation-delay: 2s;
+  }
+  
+  .note:nth-child(4) {
+    animation-delay: 2.5s;
+  }
+  
+  .note:nth-child(5) {
+    animation-delay: 3s;
+  }
+  
+  .note:nth-child(6) {
+    animation-delay: 3.5s;
+  }
+  
+  .note:nth-child(7) {
+    animation-delay: 4s;
+  }
+  
+  .note:nth-child(8) {
+    animation-delay: 4.5s;
+  }
+  
+  .note:nth-child(9) {
+    animation-delay: 5s;
+  }
+  
+  .note:nth-child(10) {
+    animation-delay: 5.5s;
+  }
+
+  .circular-data {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .circular-data span {
+    position: relative;
+    perspective: 1000px;
+    flex-basis: calc(33.33% - 10px);
+    margin: 5px;
+    /* margin-bottom: 25px; */
+    font-weight: bold;
+    font-size: larger;
+    color: #440099;
+  }
+
+  .circular-data span:hover .circular-svg {
+    transform: rotateX(15deg) translateY(-5px) translateZ(20px);
+  }
+
+  @media  (max-width: 360px) {
+    .container{
+        background-color: red;
+    }
+  }
+
+  
+  

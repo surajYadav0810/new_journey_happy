@@ -1,0 +1,77 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    background-color: #f1c40f;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 2rem;
+  }
+  
+  .box:hover {
+    transform: scale(1.05);
+  }
+  
+  .box-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .box-image {
+    width: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  .dollar {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    animation: fly 2s linear infinite;
+  }
+  
+  @keyframes fly {
+    0% {
+      transform: translate(50%, 0);
+    }
+    50% {
+      transform: translate(50%, 50px);
+    }
+    100% {
+      transform: translate(50%, 100px);
+    }
+  }
+  
+  /* .wallet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+  }
+  
+  .wallet-image {
+    width: 100px;
+    margin-bottom: 1rem;
+  }
+  
+  .wallet-title {
+    font-size: 1.5rem;
+  } */
+  

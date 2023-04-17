@@ -1,0 +1,193 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // height: 110vh;
+    // background-color: lighten(#02A8F3, 30%);
+    cursor: pointer;
+  }
+  
+  .vertical-form-container {
+    height: 90vh; width: 100vw;
+    position: relative;
+    border-radius: 10px;
+    
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: calc(100% + 5px); left: 0;
+      display: inline-block;
+      height: 30px; 
+      width: 100%;
+      background-color: rgba(0,0,0,.25);
+      border-radius: 50%;
+      filter: blur(10px);
+      
+      z-index: 1;
+    }
+    
+  }
+  .vertical-form {
+    height: 100%; width: 100%;
+    background-color: #eee;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+   
+    .step {
+      position: absolute;
+      top: 0; left: 0;
+      height: 100%; width: 100%;
+      visibility: hidden;
+      background-color: #02A8F3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: Helvetica, sans-serif;
+      
+      .title {
+        font-size: 30px;
+        margin-bottom: 16px;
+      }
+
+      .content{
+        font-size: 20px;
+      }
+      
+      
+      > * {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      
+      &.step-2 {
+        background-color: darken(#02A8F3, 10%);
+      }
+      
+      &.step-3 {
+        background-color: darken(#02A8F3, 20%);
+      }
+      
+      
+      &.active {
+        visibility: visible;
+        transform: translateY(0);
+        z-index: 2;
+        border-radius: 0;
+        
+        > * {
+          opacity: 1;
+        }
+      }
+      
+      &.previous {
+        visibility: visible;
+        transform: translateY(-100%);
+      }
+      
+      &.next {
+        visibility: visible;
+        transform: translateY(calc(100% - 67px)) scaleX(1.3333);
+        border-radius: 50%;
+        z-index: 2;
+   
+      }
+      
+      &.sliding-out {
+        animation: slidingOut 1s ease forwards;
+        
+        @keyframes slidingOut {
+          from {
+            transform: translateY(0);
+          }
+          to {
+            transform: translateY(-100%);
+          }
+        }
+      }
+      
+          &.sliding-in {
+        animation: slidingIn 1s ease forwards;
+        
+        @keyframes slidingIn {
+          from {
+            transform: translateY(calc(100% - 67px)) scaleX(1.3333);
+            border-radius: 50%;
+          }
+          to {
+            transform: translateY(0) scaleX(1);
+            border-radius: 0;
+          }
+        }
+      }
+      
+      
+    }
+    
+        i {
+        position: absolute;
+        bottom: 47px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        padding: 8px;
+        background-color: white;
+        box-shadow: 0 1px 0 black;
+        z-index: 3;
+          
+          &.animating {
+            animation: animating 1s linear;
+            
+            @keyframes animating {
+              0% {
+                transform: translateY(0) translateX(-50%);
+                opacity: 1
+              }
+              15% {
+                transform: translateY(-100%) translateX(-50%);
+                opacity: 0;
+              }
+              85% {
+                transform: translateY(100%) translateX(-50%);
+                opacity: 0;
+              }
+              100% {
+                transform: translateY(0) translateX(-50%);
+                opacity: 1;
+              }  
+            
+            }
+          }
+      }
+  }
+
+  /* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 800;
+    src: url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    // -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .tnc-page{
+    display: flex;
+  }
+
